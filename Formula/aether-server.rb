@@ -9,7 +9,7 @@ class AetherServer < Formula
   depends_on "openjdk@21"
 
   def install
-    libexec.install "aether-server-v0.0.2.jar" => "aether-server.jar"
+    libexec.install "aether-server-v#{version}.jar" => "aether-server.jar"
     
     (libexec/"aether-server").write <<~EOS
       #!/bin/bash
