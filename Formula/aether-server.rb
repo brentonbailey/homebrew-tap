@@ -2,8 +2,8 @@
 class AetherServer < Formula
   desc "Aether Server"
   homepage "https://github.com"
-  url "https://github.com/brentonbailey/aether-backend/releases/download/v0.0.2/aether-server-v0.0.2.tar.gz"
-  sha256 "99bcc608e1d0ff484c5dea64578edb7a2c83392728e5a3350f8e0fad90e1eeff"
+  url "https://github.com{VERSION}/aether-v0.0.6.tar.gz"
+  sha256 ""
   license "MIT"
 
   depends_on "openjdk@21"
