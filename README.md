@@ -9,6 +9,7 @@ To install any application from this tap, simply run the following commands in y
 ```bash
 # 1. Add this tap to your local Homebrew installation
 brew tap brentonbailey/tap
+brew trust brentonbailey/tap
 
 # 2. Install the desired application
 brew install <appname>
@@ -18,6 +19,11 @@ Alternatively, you can install tools directly in a single command without tappin
 
 ```bash
 brew install brentonbailey/tap/myapp
+```
+
+To remove the tap
+```
+brew untap brentonbailey/tap
 ```
 
 ---
