@@ -2,8 +2,8 @@
 class AuthServer < Formula
   desc "Auth Server"
   homepage "https://github.com"
-  url "https://github.com/brentonbailey/homebrew-tap/releases/download/aether-v0.0.5/aether-v0.0.5.tar.gz"
-  sha256 "b0dde8d60964b5a1280537006804fa8824b5d97a6a7e0dc222d306eb6cc6f584"
+  url "https://github.com/brentonbailey/homebrew-tap/releases/download/auth-v1.0.0/auth-v1.0.0.tar.gz"
+  sha256 "a7ec774e9383f1dde24298970bb4727ba72c9ff30f250236c6beb4a06aea9a3c"
   license "MIT"
 
   depends_on "openjdk@16"
