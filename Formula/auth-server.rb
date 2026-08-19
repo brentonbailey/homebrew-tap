@@ -6,11 +6,11 @@ class AuthServer < Formula
   sha256 "a7ec774e9383f1dde24298970bb4727ba72c9ff30f250236c6beb4a06aea9a3c"
   license "MIT"
 
-  depends_on "openjdk@16"
+  depends_on "openjdk@17"
 
   def install
     libexec.install Dir["libexec/*"]
-    (bin/"auth-server").write_env_script libexec/"bin/auth-server", Language::Java.overridable_java_home_env("16")
+    (bin/"auth-server").write_env_script libexec/"bin/auth-server", Language::Java.overridable_java_home_env("17")
   end
 
   def install
@@ -37,7 +37,7 @@ class AuthServer < Formula
 
     # Inject the additional-location property into the environment wrapper script
     # Spring Boot treats trailing slashes as folder searches for application.properties/yml
-    env = Language::Java.overridable_java_home_env("16")
+    env = Language::Java.overridable_java_home_env("17")
     env[:SPRING_CONFIG_ADDITIONAL_LOCATION] = "#{etc}/auth-server/"
 
     (bin/"auth-server").write_env_script "#{libexec}/auth-server.jar", env
