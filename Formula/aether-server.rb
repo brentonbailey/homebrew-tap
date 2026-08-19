@@ -34,7 +34,7 @@ class AetherServer < Formula
         # opensubtitles.api-key=SETME
 
         # TMDB
-        tmdb.api-key=SETME
+        # tmdb.api-key=SETME
       EOS
     end
 
@@ -53,4 +53,10 @@ class AetherServer < Formula
     EOS
   end
 
+  service do
+    run [opt_bin/"aether-server"]
+    keep_alive true
+    log_path var/"log/aether-server.log"
+    error_log_path var/"log/aether-server.err.log"
+  end
 end
