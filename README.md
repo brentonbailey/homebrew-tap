@@ -27,6 +27,7 @@ brew install brentonbailey/tap/myapp
 | Application | Description | Installation Command | Service |
 | :--- | :--- | :--- | :--- |
 | **`aether-server`** | Media Library management backend. | `brew install aether-server` | Yes |
+| **`auth-server`** | Google Home Authentcation Endpoint. | `brew install auth-server` | Yes |
 
 
 ---
@@ -43,10 +44,10 @@ brew upgrade <appname>
 
 ### Run as a Service
 Homebrew supports running applications as services.
-```
+```bash
 brew services list | grep <appname>
-brew services start <appname>
-brew services stop <appname>
+brew services start brentonbailey/tap/<appname>
+brew services stop brentonbailey/tap/<appname>
 ```
 
 ### Troubleshooting
