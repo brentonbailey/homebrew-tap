@@ -24,9 +24,9 @@ brew install brentonbailey/tap/myapp
 
 ## Available Applications
 
-| Application | Description | Installation Command |
-| :--- | :--- | :--- |
-| **`aether-server`** | Media Library management backend. | `brew install aether-server` |
+| Application | Description | Installation Command | Service |
+| :--- | :--- | :--- | :--- |
+| **`aether-server`** | Media Library management backend. | `brew install aether-server` | Yes |
 
 
 ---
@@ -39,6 +39,14 @@ Homebrew automatically checks for updates when you run your routine update cycle
 ```bash
 brew update
 brew upgrade <appname>
+```
+
+### Run as a Service
+Homebrew supports running applications as services.
+```
+brew services list | grep <appname>
+brew services start <appname>
+brew services stop <appname>
 ```
 
 ### Troubleshooting
