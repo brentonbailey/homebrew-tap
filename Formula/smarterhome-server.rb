@@ -2,8 +2,8 @@
 class SmarterhomeServer < Formula
   desc "Smarterhome Server"
   homepage "https://github.com"
-  url "https://github.com/brentonbailey/homebrew-tap/releases/download/smarterhome-v0.0.1/smarterhome-v0.0.1.tar.gz"
-  sha256 "b0dde8d60964b5a1280537006804fa8824b5d97a6a7e0dc222d306eb6cc6f584"
+  url "https://github.com/brentonbailey/homebrew-tap/releases/download/smarterhome-v0.0.2/smarterhome-v0.0.2.tar.gz"
+  sha256 "0269ddd79b941ae986c39006794942e832f4718265f0286be25572aa58c092ef"
   license "MIT"
 
   depends_on "openjdk@21"
