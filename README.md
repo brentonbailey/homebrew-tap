@@ -1,4 +1,4 @@
-# Brenton Bailey Homebrew Tap
+# Homebrew Tap
 
 Welcome to the official Homebrew tap for my custom developer utilities and applications. This repository distributes pre-compiled binaries for macOS and Linux.
 
