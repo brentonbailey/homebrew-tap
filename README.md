@@ -28,6 +28,7 @@ brew install brentonbailey/tap/myapp
 | :--- | :--- | :--- | :--- |
 | **`aether-server`** | Media Library management backend. | `brew install aether-server` | Yes |
 | **`auth-server`** | Google Home Authentcation Endpoint. | `brew install auth-server` | Yes |
+| **`smarterhoem-server`** | Smarterhome Server. | `brew install smarterhome-server` | Yes |
 
 
 ---
