@@ -54,6 +54,7 @@ class AetherServer < Formula
     # Spring Boot treats trailing slashes as folder searches for application.properties/yml
     env = Language::Java.overridable_java_home_env("21")
     env[:SPRING_CONFIG_ADDITIONAL_LOCATION] = "#{etc}/aether/"
+    env[:SQLITE_VEC_PATH] = "#{lib}/vec0"
 
     (bin/"aether-server").write_env_script "#{libexec}/aether-server.jar", env
   end
