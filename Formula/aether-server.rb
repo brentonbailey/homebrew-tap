@@ -8,12 +8,24 @@ class AetherServer < Formula
 
   depends_on "openjdk@21"
 
-  def install
-    libexec.install Dir["libexec/*"]
-    (bin/"aether").write_env_script libexec/"bin/aether", Language::Java.overridable_java_home_env("21")
+  if Hardware::CPU.arm?
+    resource "sqlite-vec" do
+      url "https://github.com/asg017/sqlite-vec/releases/download/v0.1.10-alpha.4/sqlite-vec-0.1.10-alpha.4-loadable-macos-aarch64.tar.gz"
+      sha256 "9c4c3c9fee1cd68d07028f90c9e31b67f13ca1a1737435ae569e8fe7a17b5a91"
+    end
+  else
+    resource "sqlite-vec" do
+      url "https://github.com/asg017/sqlite-vec/releases/download/v0.1.10-alpha.4/sqlite-vec-0.1.10-alpha.4-loadable-macos-x86_64.tar.gz"
+      sha256 "eaa956fa7f145260c7f607ae5e094e48ce6366bb8d0b284266504405b62c7d17"
+    end
   end
 
   def install
+
+    # Install the native sqlite extension into the Homebrew lib dir
+    resource("sqlite-vec").stage do
+      lib.install "vec0.dylib"
+    end
 
     libexec.install "aether-server.jar"
 
