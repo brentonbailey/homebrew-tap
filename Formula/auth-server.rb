@@ -31,7 +31,7 @@ class AuthServer < Formula
     end
 
     # Include configuration examples for other applications
-    (etc/"auth-server/nginx").install "config/nginx/*"
+    (etc/"auth-server/nginx").install "config/nginx"
     (etc/"auth-server/statlite").install "config/statlite/auth-server.conf"
 
     # Inject the additional-location property into the environment wrapper script

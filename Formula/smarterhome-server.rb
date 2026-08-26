@@ -25,7 +25,7 @@ class SmarterhomeServer < Formula
     end
 
     # Include configuration examples for other applications
-    (etc/"smarterhome/nginx").install "config/nginx/*"
+    (etc/"smarterhome/nginx").install "config/nginx"
     (etc/"smarterhome/statlite").install "config/statlite/smarterhome.conf"
 
 
