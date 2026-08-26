@@ -9,11 +9,6 @@ class AuthServer < Formula
   depends_on "openjdk@17"
 
   def install
-    libexec.install Dir["libexec/*"]
-    (bin/"auth-server").write_env_script libexec/"bin/auth-server", Language::Java.overridable_java_home_env("17")
-  end
-
-  def install
 
     libexec.install "auth-server.jar"
 

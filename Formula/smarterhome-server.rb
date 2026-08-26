@@ -9,11 +9,6 @@ class SmarterhomeServer < Formula
   depends_on "openjdk@21"
 
   def install
-    libexec.install Dir["libexec/*"]
-    (bin/"smarterhome-server").write_env_script libexec/"bin/smarterhome-server", Language::Java.overridable_java_home_env("21")
-  end
-
-  def install
 
     libexec.install "smarterhome-server.jar"
 
