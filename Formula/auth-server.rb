@@ -35,6 +35,10 @@ class AuthServer < Formula
       EOS
     end
 
+    # Include configuration examples for other applications
+    (etc/"auth-server/nginx").install "config/nginx/*"
+    (etc/"auth-server/statlite").install "config/statlite/auth-server.conf"
+
     # Inject the additional-location property into the environment wrapper script
     # Spring Boot treats trailing slashes as folder searches for application.properties/yml
     env = Language::Java.overridable_java_home_env("17")
@@ -47,6 +51,12 @@ class AuthServer < Formula
     <<~EOS
       Your external configuration files can be placed or modified in:
         #{etc}/auth-server/application.properties
+
+      To activate this routing fragment in your local Nginx instance, link it and restart Nginx:
+        mkdir #{etc}/nginx/app_routes
+        ln -sf #{etc}/auth-server/nginx/servers/auth-server.conf #{etc}/nginx/servers/auth-server.conf
+        ln -sf #{etc}/auth-server/nginx/app_routes/auth-server.conf #{etc}/nginx/app_routes/auth-server.conf
+        brew services restart nginx
     EOS
   end
 
