@@ -49,7 +49,7 @@ class AuthServer < Formula
 
       To activate this routing fragment in your local Nginx instance, link it and restart Nginx:
         mkdir #{etc}/nginx/app_routes
-        ln -sf #{etc}/auth-server/nginx/servers/auth_server.conf #{etc}/nginx/server/auth_server.conf
+        ln -sf #{etc}/auth-server/nginx/server/auth_server.conf #{etc}/nginx/servers/auth_server.conf
         ln -sf #{etc}/auth-server/nginx/app_routes/auth_server.conf #{etc}/nginx/app_routes/auth_server.conf
         brew services restart nginx
     EOS

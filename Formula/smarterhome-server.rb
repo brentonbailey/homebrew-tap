@@ -44,7 +44,7 @@ class SmarterhomeServer < Formula
 
       To activate this routing fragment in your local Nginx instance, link it and restart Nginx:
         mkdir #{etc}/nginx/app_routes
-        ln -sf #{etc}/smarterhome/nginx/servers/smarterhome_upstream.conf #{etc}/nginx/server/smarterhome_upstream.conf
+        ln -sf #{etc}/smarterhome/nginx/server/smarterhome_upstream.conf #{etc}/nginx/servers/smarterhome_upstream.conf
         ln -sf #{etc}/smarterhome/nginx/app_routes/smarterhome.conf #{etc}/nginx/app_routes/smarterhome.conf
         brew services restart nginx
     EOS
