@@ -2,8 +2,8 @@
 class AuthServer < Formula
   desc "Auth Server"
   homepage "https://github.com"
-  url "https://github.com/brentonbailey/homebrew-tap/releases/download/auth-v1.0.0/auth-v1.0.0.tar.gz"
-  sha256 "a7ec774e9383f1dde24298970bb4727ba72c9ff30f250236c6beb4a06aea9a3c"
+  url "https://github.com/brentonbailey/homebrew-tap/releases/download/auth-v1.0.1/auth-v1.0.1.tar.gz"
+  sha256 "a743d9c91d313e3c1385919c9b635a769108a87af037676e098c48d06e801b7a"
   license "MIT"
 
   depends_on "openjdk@17"
