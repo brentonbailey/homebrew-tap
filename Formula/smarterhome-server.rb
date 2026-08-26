@@ -29,6 +29,11 @@ class SmarterhomeServer < Formula
       EOS
     end
 
+    # Include configuration examples for other applications
+    (etc/"smarterhome/nginx").install "config/nginx/conf.d/smarterhome.conf"
+    (etc/"smarterhome/statlite").install "config/statlite/smarterhome.conf"
+
+
     # Inject the additional-location property into the environment wrapper script
     # Spring Boot treats trailing slashes as folder searches for application.properties/yml
     env = Language::Java.overridable_java_home_env("21")
@@ -41,6 +46,10 @@ class SmarterhomeServer < Formula
     <<~EOS
       Your external configuration files can be placed or modified in:
         #{etc}/smarterhome/application.properties
+
+      To activate this routing fragment in your local Nginx instance, link it and restart Nginx:
+        ln -sf #{etc}/smarterhome/nginx/smarterhome.conf #{etc}/nginx/servers/smarterhome.conf
+        brew services restart nginx
     EOS
   end
 
