@@ -30,7 +30,7 @@ class SmarterhomeServer < Formula
     end
 
     # Include configuration examples for other applications
-    (etc/"smarterhome/nginx").install "config/nginx/conf.d/smarterhome.conf"
+    (etc/"smarterhome/nginx").install "config/nginx/*"
     (etc/"smarterhome/statlite").install "config/statlite/smarterhome.conf"
 
 
@@ -48,7 +48,9 @@ class SmarterhomeServer < Formula
         #{etc}/smarterhome/application.properties
 
       To activate this routing fragment in your local Nginx instance, link it and restart Nginx:
-        ln -sf #{etc}/smarterhome/nginx/smarterhome.conf #{etc}/nginx/servers/smarterhome.conf
+        mkdir #{etc}/nginx/app_routes
+        ln -sf #{etc}/smarterhome/nginx/servers/smarterhome_upstream.conf #{etc}/nginx/servers/smarterhome_upstream.conf
+        ln -sf #{etc}/smarterhome/nginx/app_routes/smarterhome.conf #{etc}/nginx/app_routes/smarterhome.conf
         brew services restart nginx
     EOS
   end
