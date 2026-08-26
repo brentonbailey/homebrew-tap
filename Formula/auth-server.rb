@@ -32,7 +32,7 @@ class AuthServer < Formula
 
     # Include configuration examples for other applications
     (etc/"auth-server/nginx").install "config/nginx"
-    (etc/"auth-server/statlite").install "config/statlite/auth-server.conf"
+    (etc/"auth-server/statlite").install "config/statlite/auth_server.conf"
 
     # Inject the additional-location property into the environment wrapper script
     # Spring Boot treats trailing slashes as folder searches for application.properties/yml
@@ -49,8 +49,8 @@ class AuthServer < Formula
 
       To activate this routing fragment in your local Nginx instance, link it and restart Nginx:
         mkdir #{etc}/nginx/app_routes
-        ln -sf #{etc}/auth-server/nginx/servers/auth-server.conf #{etc}/nginx/servers/auth-server.conf
-        ln -sf #{etc}/auth-server/nginx/app_routes/auth-server.conf #{etc}/nginx/app_routes/auth-server.conf
+        ln -sf #{etc}/auth-server/nginx/servers/auth_server.conf #{etc}/nginx/servers/auth_server.conf
+        ln -sf #{etc}/auth-server/nginx/app_routes/auth_server.conf #{etc}/nginx/app_routes/auth_server.conf
         brew services restart nginx
     EOS
   end
