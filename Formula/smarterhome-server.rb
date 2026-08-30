@@ -34,7 +34,7 @@ class SmarterhomeServer < Formula
     env = Language::Java.overridable_java_home_env("21")
     env[:SPRING_CONFIG_ADDITIONAL_LOCATION] = "#{etc}/smarterhome/"
 
-    (bin/"smarterhome-server").write_env_script "#{libexec}/smarterhome-server.jar", env
+    (bin/"smarterhome-server").write_env_script "java -jar #{libexec}/smarterhome-server.jar", env
   end
 
   def caveats

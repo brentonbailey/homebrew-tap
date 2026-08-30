@@ -50,19 +50,29 @@ class AetherServer < Formula
       EOS
     end
 
+    # Include external configuration
+    (etc/"smarterhome").install "config/nginx"
+    (etc/"smarterhome/statlite").install "config/statlite/aether.conf"
+
     # Inject the additional-location property into the environment wrapper script
     # Spring Boot treats trailing slashes as folder searches for application.properties/yml
     env = Language::Java.overridable_java_home_env("21")
     env[:SPRING_CONFIG_ADDITIONAL_LOCATION] = "#{etc}/aether/"
     env[:SQLITE_VEC_PATH] = "#{lib}/vec0"
 
-    (bin/"aether-server").write_env_script "#{libexec}/aether-server.jar", env
+    (bin/"aether-server").write_env_script "java -jar #{libexec}/aether-server.jar", env
   end
 
   def caveats
     <<~EOS
       Your external configuration files can be placed or modified in:
         #{etc}/aether/application.properties
+
+      To activate this routing fragment in your local Nginx instance, link it and restart Nginx:
+        mkdir #{etc}/nginx/app_routes
+        ln -sf #{etc}/smarterhome/nginx/server/aether.conf #{etc}/nginx/servers/aether.conf
+        ln -sf #{etc}/smarterhome/nginx/app_routes/aether.conf #{etc}/nginx/app_routes/aether.conf
+        brew services restart nginx
     EOS
   end
 
