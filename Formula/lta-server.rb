@@ -35,7 +35,7 @@ class LtaServer < Formula
     env = Language::Java.overridable_java_home_env("21")
     env[:SPRING_CONFIG_ADDITIONAL_LOCATION] = "#{etc}/lta-server/"
 
-    (bin/"lta-server").write_env_script "#{libexec}/lta-server.jar", env
+    (bin/"lta-server").write_env_script "java -jar #{libexec}/lta-server.jar", env
   end
 
   def caveats
