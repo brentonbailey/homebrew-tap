@@ -11,6 +11,7 @@ class SmarterhomeServer < Formula
   def install
 
     libexec.install "smarterhome-server.jar"
+    libexec.install "models"
 
     # This creates e.g., /opt/homebrew/etc/smarterhome/
     (etc/"smarterhome").mkpath
@@ -33,6 +34,7 @@ class SmarterhomeServer < Formula
     # Spring Boot treats trailing slashes as folder searches for application.properties/yml
     env = Language::Java.overridable_java_home_env("21")
     env[:SPRING_CONFIG_ADDITIONAL_LOCATION] = "#{etc}/smarterhome/"
+    env[:SMARTERHOME_MODELS_DIR] = libexec/"models"
 
     (bin/"smarterhome-server").write_env_script "java -jar #{libexec}/smarterhome-server.jar", env
   end
