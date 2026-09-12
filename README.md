@@ -44,6 +44,8 @@ brew update
 brew upgrade <appname>
 ```
 
+If you see merge errors in the local tap that do not exist in the github version run `brew update-reset`
+
 ### Run as a Service
 Homebrew supports running applications as services.
 ```bash
